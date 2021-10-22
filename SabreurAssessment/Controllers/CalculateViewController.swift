@@ -30,6 +30,9 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
+
+    var bmiLabel: String = "" //Initialise with empty String
+    
     
     //Initialise height and weight labels to slider values.
     
@@ -55,12 +58,28 @@ class CalculateViewController: UIViewController {
         let height = heightSlider.value
         let weight = weightSlider.value
         let bmi = weight / (pow(height,2))
-        let bmiLabel = String(format: "%.02f" , bmi)
+        bmiLabel = String(format: "%.02f" , bmi)
         
-        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    //Check that the segue.identifier is as expected for the result view controller, then set destinationVC as that segue destination and downcast it as the expected custom view controlle class so that we can access the latter's variables.
+        if (segue.identifier == "goToResult") {
+            let destinationVC = segue.destination as! ResultViewController
+            if (!bmiLabel.isEmpty) {
+                destinationVC.bmiLabel = bmiLabel
+            } else {
+                //Throw Error
+            }
+        } else {
+            //Throw Error
+        }
+        
+        
+    }
     
 }
 
