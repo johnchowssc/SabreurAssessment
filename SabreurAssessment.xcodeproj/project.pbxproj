@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		52D371A627226230005D75BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371A527226230005D75BB /* AppDelegate.swift */; };
 		52D371A827226230005D75BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371A727226230005D75BB /* SceneDelegate.swift */; };
-		52D371AA27226230005D75BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371A927226230005D75BB /* ViewController.swift */; };
+		52D371AA27226230005D75BB /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371A927226230005D75BB /* CalculateViewController.swift */; };
 		52D371AD27226230005D75BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D371AB27226230005D75BB /* Main.storyboard */; };
 		52D371AF27226235005D75BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D371AE27226235005D75BB /* Assets.xcassets */; };
 		52D371B227226235005D75BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D371B027226235005D75BB /* LaunchScreen.storyboard */; };
 		52D371BD27226236005D75BB /* SabreurAssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371BC27226236005D75BB /* SabreurAssessmentTests.swift */; };
 		52D371C727226236005D75BB /* SabreurAssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371C627226236005D75BB /* SabreurAssessmentUITests.swift */; };
 		52D371C927226236005D75BB /* SabreurAssessmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371C827226236005D75BB /* SabreurAssessmentUITestsLaunchTests.swift */; };
+		52D371D9272288E5005D75BB /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D371D8272288E5005D75BB /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		52D371A227226230005D75BB /* SabreurAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SabreurAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D371A527226230005D75BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D371A727226230005D75BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52D371A927226230005D75BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52D371A927226230005D75BB /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		52D371AC27226230005D75BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52D371AE27226235005D75BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52D371B127226235005D75BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		52D371C227226236005D75BB /* SabreurAssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SabreurAssessmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D371C627226236005D75BB /* SabreurAssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabreurAssessmentUITests.swift; sourceTree = "<group>"; };
 		52D371C827226236005D75BB /* SabreurAssessmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabreurAssessmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52D371D8272288E5005D75BB /* ResultViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,10 @@
 			children = (
 				52D371A527226230005D75BB /* AppDelegate.swift */,
 				52D371A727226230005D75BB /* SceneDelegate.swift */,
-				52D371A927226230005D75BB /* ViewController.swift */,
-				52D371AB27226230005D75BB /* Main.storyboard */,
+				52D371D727228762005D75BB /* Models */,
+				52D371D62722874A005D75BB /* Views */,
+				52D371D527228703005D75BB /* Controllers */,
 				52D371AE27226235005D75BB /* Assets.xcassets */,
-				52D371B027226235005D75BB /* LaunchScreen.storyboard */,
 				52D371B327226235005D75BB /* Info.plist */,
 			);
 			path = SabreurAssessment;
@@ -125,6 +127,31 @@
 				52D371C827226236005D75BB /* SabreurAssessmentUITestsLaunchTests.swift */,
 			);
 			path = SabreurAssessmentUITests;
+			sourceTree = "<group>";
+		};
+		52D371D527228703005D75BB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52D371A927226230005D75BB /* CalculateViewController.swift */,
+				52D371D8272288E5005D75BB /* ResultViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52D371D62722874A005D75BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52D371B027226235005D75BB /* LaunchScreen.storyboard */,
+				52D371AB27226230005D75BB /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		52D371D727228762005D75BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D371AA27226230005D75BB /* ViewController.swift in Sources */,
+				52D371AA27226230005D75BB /* CalculateViewController.swift in Sources */,
 				52D371A627226230005D75BB /* AppDelegate.swift in Sources */,
 				52D371A827226230005D75BB /* SceneDelegate.swift in Sources */,
+				52D371D9272288E5005D75BB /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
