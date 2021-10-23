@@ -31,7 +31,10 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
 
-    var bmiLabel: String = "" //Initialise with empty String
+    var calculator = Calculator() //Initialise Calculator struct instance.
+    
+    //var bmiLabel: String = "" //Initialise with empty String
+
     
     
     //Initialise height and weight labels to slider values.
@@ -57,9 +60,10 @@ class CalculateViewController: UIViewController {
     @IBAction func calculatePressed(_ sender: UIButton) {
         let height = heightSlider.value
         let weight = weightSlider.value
-        let bmi = weight / (pow(height,2))
-        bmiLabel = String(format: "%.02f" , bmi)
+        //let bmi = weight / (pow(height,2))
+        //bmiLabel = String(format: "%.02f" , bmi)
         
+        calculator.calculateBMI(height: height, weight: weight)
         self.performSegue(withIdentifier: "goToResult", sender: self)
         
     }
@@ -69,8 +73,12 @@ class CalculateViewController: UIViewController {
     //Check that the segue.identifier is as expected for the result view controller, then set destinationVC as that segue destination and downcast it as the expected custom view controlle class so that we can access the latter's variables.
         if (segue.identifier == "goToResult") {
             let destinationVC = segue.destination as! ResultViewController
-            if (!bmiLabel.isEmpty) {
-                destinationVC.bmiLabel = bmiLabel
+            if (!calculator.getBMIValue().isEmpty) {
+                //print(bmiLabel)
+                //print(calculator.getBMIValue())
+                destinationVC.bmiLabel = calculator.getBMIValue()
+                destinationVC.bmiAdvice = calculator.getAdvice()
+                destinationVC.adviceColor = calculator.getColor()
             } else {
                 //Throw Error
             }

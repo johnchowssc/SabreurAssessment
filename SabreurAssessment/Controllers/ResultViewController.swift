@@ -9,7 +9,9 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    var bmiLabel: String? //Optional String
+    var bmiLabel: String?
+    var bmiAdvice: String?
+    var adviceColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,8 @@ class ResultViewController: UIViewController {
             //Throw Error
         } else {
             BMILabel.text = bmiLabel
+            BMIAdvice.text = bmiAdvice
+            BMIAdvice.textColor = adviceColor
         }
     }
     
